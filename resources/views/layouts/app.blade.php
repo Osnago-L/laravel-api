@@ -10,11 +10,9 @@
     <title>Boolpress</title>
 
     <!-- Scripts -->
-    @guest
-    <script src="{{ asset('js/front.js') }}" defer></script>
-    @else
+
     <script src="{{ asset('js/back.js') }}" defer></script>
-    @endguest
+
     
 
     <!-- Fonts -->
@@ -22,15 +20,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    @guest
-    <link href="{{ asset('css/front.css') }}" rel="stylesheet">
-    @else
     <link href="{{ asset('css/back.css') }}" rel="stylesheet">
-    @endguest
-    
+
 </head>
 <body>
-    <div id="app">
+    <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

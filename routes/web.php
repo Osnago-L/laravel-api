@@ -29,7 +29,7 @@ Route::middleware('auth')
 });
 
 Route::get('/home', function(){
-    return view('welcome'); 
+    return view('front'); 
 })->name('home');
 
 

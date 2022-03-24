@@ -25,15 +25,14 @@
                     @endforeach
                 </select>
             </div>
-            {{-- @foreach ($data_tags as $element)
+            @foreach ($data_tags as $element)
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="tags_id[]" value="{{$element->id}}">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        {{$element->name}}
+                    <input class="form-check-input" type="checkbox" name="tags_id[]" id="{{$element->slug}}" value="{{$element->id}}">
+                    <label class="form-check-label" for="{{$element->slug}}">
+                        {{ $element->name }}
                     </label>
                 </div>
             @endforeach
-            <br> --}}
             <input type="submit" class="btn btn-primary" value="Edit">
         </form>
     </div>

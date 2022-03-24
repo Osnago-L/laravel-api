@@ -22,6 +22,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Category</th>
                     <th scope="col">Content</th>
+                    <th scope="col">Tags</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -32,8 +33,16 @@
                         <td>{{ $element->posts_title }}</td>
                         <td>{{ $element->category ? $element->category->name : '-' }}</td>
                         <td>{{ $element->content }}</td>
-                        <td><a href="{{ route('admin.posts.show', $element->id) }}"><button type="button"
-                                    class="btn btn-primary">Show</button></a></td>
+                        <td>
+                            @foreach ($element->tags as $tag)
+                                {{ $tag->name }}
+                            @endforeach
+                        </td>
+                        <td>
+                            <a href="{{ route('admin.posts.show', $element->id) }}">
+                                <button type="button" class="btn btn-primary">Show</button>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

@@ -122,7 +122,7 @@ class PostController extends Controller
 
         $post->fill($data);
         $post->save();
-
+        $post->tags()->sync(isset($data['tags_id'])?$data['tags_id']:[]);
 
         return redirect()->route('admin.posts.show', $post->id);
     }
