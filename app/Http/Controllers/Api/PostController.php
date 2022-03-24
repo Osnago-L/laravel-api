@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index(){
 
-        $api = Post::all();
+        $api = Post::with('category','tags')->get();
         return response()->json([
             'success' => true,
             'data' => $api

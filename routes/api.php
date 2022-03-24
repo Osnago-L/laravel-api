@@ -18,10 +18,18 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-
+// POSTS 
 
 Route::get('/posts', 'Api\PostController@index');
 
+// CATEGORY 
+
+Route::get('/category', 'Api\CategoryController@index');
+
+// fetch category 
+
+
+
 // category filter id
 
-Route::get('/posts/{category_id}', 'Api\PostController@filter');
+// Route::get('/posts/{category_id}', 'Api\PostController@filter');

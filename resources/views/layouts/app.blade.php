@@ -10,14 +10,24 @@
     <title>Boolpress</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    @guest
+    <script src="{{ asset('js/front.js') }}" defer></script>
+    @else
+    <script src="{{ asset('js/back.js') }}" defer></script>
+    @endguest
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @guest
+    <link href="{{ asset('css/front.css') }}" rel="stylesheet">
+    @else
+    <link href="{{ asset('css/back.css') }}" rel="stylesheet">
+    @endguest
+    
 </head>
 <body>
     <div id="app">
@@ -32,12 +42,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{route('admin.posts.index')}}">Dashboard</a>
-                        </li>
-                    </ul>
-
+                    @auth
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{route('admin.posts.index')}}">Dashboard</a>
+                            </li>
+                        </ul>
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
